@@ -1,9 +1,11 @@
-/* style.css */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -13,11 +15,8 @@ body {
   line-height: 1.6;
 }
 
-/* HERO */
-
 .hero {
-  position: relative;
-  height: 100vh;
+  min-height: 100vh;
 
   display: flex;
   justify-content: center;
@@ -25,11 +24,11 @@ body {
 
   text-align: center;
 
+  padding: 40px 20px;
+
   background:
-    linear-gradient(
-      rgba(0,0,0,0.7),
-      rgba(0,0,0,0.8)
-    ),
+    linear-gradient(rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.9)),
     url("https://placehold.co/1920x1080");
 
   background-size: cover;
@@ -37,22 +36,21 @@ body {
 }
 
 .hero-content {
-  max-width: 700px;
-  padding: 20px;
+  max-width: 800px;
 }
 
 .hero h1 {
   font-size: 5rem;
   margin-bottom: 20px;
+
+  color: #ffffff;
 }
 
 .hero p {
   font-size: 1.2rem;
   color: #cccccc;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
-
-/* BUTTONS */
 
 .buttons {
   display: flex;
@@ -64,11 +62,16 @@ body {
 .btn {
   text-decoration: none;
   padding: 14px 28px;
-  border-radius: 10px;
+  border-radius: 12px;
 
   font-weight: bold;
-
   transition: 0.2s ease;
+
+  display: inline-block;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
 }
 
 .primary {
@@ -77,20 +80,27 @@ body {
 }
 
 .primary:hover {
-  transform: translateY(-3px);
-  background: #7d75ff;
+  background: #7c74ff;
 }
 
 .secondary {
-  border: 2px solid #6c63ff;
+  background: #1f2430;
   color: white;
+  border: 2px solid #6c63ff;
 }
 
 .secondary:hover {
-  background: #6c63ff;
+  background: #2a3040;
 }
 
-/* SECTIONS */
+.github {
+  background: #24292e;
+  color: white;
+}
+
+.github:hover {
+  background: #32383f;
+}
 
 .section {
   padding: 80px 20px;
@@ -104,8 +114,6 @@ body {
   margin-bottom: 50px;
 }
 
-/* FEATURES */
-
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -115,7 +123,7 @@ body {
 .card {
   background: #1a1d24;
   padding: 25px;
-  border-radius: 15px;
+  border-radius: 16px;
 
   transition: 0.2s ease;
 }
@@ -125,24 +133,20 @@ body {
 }
 
 .card h3 {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
-
-/* SCREENSHOTS */
 
 .screenshots {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 
   gap: 20px;
 }
 
 .screenshots img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 14px;
 }
-
-/* ROADMAP */
 
 .roadmap {
   max-width: 700px;
@@ -156,18 +160,14 @@ body {
   margin-bottom: 15px;
 
   padding: 18px;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
-/* FOOTER */
-
 footer {
-  padding: 30px;
+  padding: 40px 20px;
   text-align: center;
   color: #999;
 }
-
-/* RESPONSIVE */
 
 @media (max-width: 768px) {
 
@@ -177,6 +177,16 @@ footer {
 
   .hero p {
     font-size: 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 320px;
   }
 
 }
