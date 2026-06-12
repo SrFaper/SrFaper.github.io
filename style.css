@@ -1,3 +1,14 @@
+/* Configuracion Global y Variables de Color (Paleta Feed95) */
+:root {
+  --bg-dark: #121212;          /* Color de fondo oscuro real de la app */
+  --bg-card: #1a1a1a;          /* Color de tarjetas e hilos de la interfaz */
+  --color-acento: #ff3344;     /* Rojo/Rosado de los botones de accion */
+  --color-acento-hover: #e02233;
+  --text-main: #ffffff;
+  --text-muted: #888888;       /* Gris de las estadisticas y textos secundarios */
+  --borde-radio: 12px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,184 +20,239 @@ html {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #0f1115;
-  color: white;
+  font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
   line-height: 1.6;
 }
 
-.hero {
-  min-height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
-
-  padding: 40px 20px;
-
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.75),
-      rgba(0, 0, 0, 0.9)),
-    url("https://placehold.co/1920x1080");
-
-  background-size: cover;
-  background-position: center;
-}
-
-.hero-content {
-  max-width: 800px;
-}
-
-.hero h1 {
-  font-size: 5rem;
-  margin-bottom: 20px;
-
-  color: #ffffff;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  color: #cccccc;
-  margin-bottom: 35px;
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.btn {
-  text-decoration: none;
-  padding: 14px 28px;
-  border-radius: 12px;
-
-  font-weight: bold;
-  transition: 0.2s ease;
-
-  display: inline-block;
-}
-
-.btn:hover {
-  transform: translateY(-4px);
-}
-
-.primary {
-  background: #6c63ff;
-  color: white;
-}
-
-.primary:hover {
-  background: #7c74ff;
-}
-
-.secondary {
-  background: #1f2430;
-  color: white;
-  border: 2px solid #6c63ff;
-}
-
-.secondary:hover {
-  background: #2a3040;
-}
-
-.github {
-  background: #24292e;
-  color: white;
-}
-
-.github:hover {
-  background: #32383f;
-}
-
+/* Estilos de las Secciones Generales */
 .section {
-  padding: 80px 20px;
-  max-width: 1200px;
+  padding: 80px 24px;
+  max-width: 1100px;
   margin: auto;
 }
 
 .section h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
+  font-weight: 700;
   margin-bottom: 50px;
+  letter-spacing: -0.5px;
 }
 
-.features {
+/* Configuracion de la Seccion Hero */
+.hero {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  background: radial-gradient(circle at center, #221517 0%, var(--bg-dark) 70%);
+}
+
+.hero-content {
+  max-width: 750px;
+}
+
+.hero h1 {
+  font-size: 5.5rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -2px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+/* Contenedor y Estados de los Botones */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: var(--borde-radio);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn .version-tag {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+/* Variaciones de Botones (Colores) */
+.primary {
+  background-color: var(--color-acento);
+  color: white;
+  box-shadow: 0 4px 14px rgba(255, 51, 68, 0.3);
+}
+
+.primary:hover {
+  background-color: var(--color-acento-hover);
+  box-shadow: 0 6px 20px rgba(255, 51, 68, 0.4);
+}
+
+.secondary {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid #282828;
+}
+
+.secondary:hover {
+  background-color: #222222;
+  border-color: #444;
+}
+
+.github {
+  background-color: #24292e;
+  color: white;
+}
+
+.github:hover {
+  background-color: #2f363d;
+}
+
+/* Rejilla de Caracteristicas (Cards) */
+.features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
 }
 
 .card {
-  background: #1a1d24;
-  padding: 25px;
-  border-radius: 16px;
-
-  transition: 0.2s ease;
+  background-color: var(--bg-card);
+  padding: 30px;
+  border-radius: var(--borde-radio);
+  border: 1px solid #1f1f1f;
+  transition: border-color 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  border-color: #333333;
 }
 
 .card h3 {
+  font-size: 1.25rem;
   margin-bottom: 12px;
+  font-weight: 600;
 }
 
-.screenshots {
+.card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Ventanas Simuladas de la App (Mockup de Capturas) */
+.screenshots-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 32px;
 }
 
-.screenshots img {
+.window-mockup {
+  background-color: var(--bg-card);
+  border-radius: var(--borde-radio);
+  overflow: hidden;
+  border: 1px solid #252525;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.window-header {
+  background-color: #161616;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #222222;
+}
+
+.window-header .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.window-header .dot.red { background-color: #ff5f56; }
+.window-header .dot.yellow { background-color: #ffbd2e; }
+.window-header .dot.green { background-color: #27c93f; }
+
+.window-title {
+  margin-left: 12px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: monospace;
+}
+
+.window-mockup img {
   width: 100%;
-  border-radius: 14px;
+  display: block;
+  height: auto;
 }
 
-.roadmap {
-  max-width: 700px;
+/* Lista de Roadmap Estilizada */
+.roadmap-list {
+  max-width: 600px;
   margin: auto;
-
   list-style: none;
 }
 
-.roadmap li {
-  background: #1a1d24;
-  margin-bottom: 15px;
-
-  padding: 18px;
-  border-radius: 12px;
+.roadmap-list li {
+  background-color: var(--bg-card);
+  margin-bottom: 12px;
+  padding: 16px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  border-left: 4px solid transparent;
 }
 
+.roadmap-list li.done {
+  border-left-color: #27c93f;
+  color: var(--text-main);
+}
+
+.roadmap-list li.pending {
+  border-left-color: #ffbd2e;
+  color: var(--text-muted);
+}
+
+/* Pie de Pagina */
 footer {
-  padding: 40px 20px;
+  padding: 60px 24px;
   text-align: center;
-  color: #999;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid #1a1a1a;
 }
 
+/* Adaptacion Movil */
 @media (max-width: 768px) {
-
-  .hero h1 {
-    font-size: 3rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .btn {
-    width: 100%;
-    max-width: 320px;
-  }
-
+  .hero h1 { font-size: 3.5rem; }
+  .hero p { font-size: 1.1rem; }
+  .buttons { flex-direction: column; align-items: center; }
+  .btn { width: 100%; max-width: 340px; }
+  .screenshots-container { grid-template-columns: 1fr; }
 }

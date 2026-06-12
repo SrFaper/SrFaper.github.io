@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Feed95</title>
-
+  <title>Feed95 - Descarga</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header class="hero">
-
     <div class="hero-content">
       <h1>Feed95</h1>
 
@@ -20,95 +18,88 @@
       </p>
 
       <div class="buttons">
-
-        <a
-          href="https://github.com/SrFaper/feed95/releases/download/beta/feed95.apk"
-          target="_blank"
-          class="btn primary"
-        >
-          Descargar APK
+        <a href="https://github.com/SrFaper/feed95/releases/download/beta/feed95.apk" target="_blank" class="btn primary" id="btn-apk">
+          <span>Descargar APK</span>
+          <small class="version-tag">Cargando...</small>
         </a>
 
-        <a
-          href="https://github.com/SrFaper/feed95/releases/download/beta-windows/feed95.zip"
-          target="_blank"
-          class="btn secondary"
-        >
-          Descargar Windows
+        <a href="https://github.com/SrFaper/feed95/releases/download/beta-windows/feed95.zip" target="_blank" class="btn secondary" id="btn-windows">
+          <span>Descargar Windows</span>
+          <small class="version-tag">Cargando...</small>
         </a>
 
-        <a
-          href="https://github.com/SrFaper/feed95"
-          target="_blank"
-          class="btn github"
-        >
+        <a href="https://github.com/SrFaper/feed95" target="_blank" class="btn github">
           Ver GitHub
         </a>
-
       </div>
     </div>
   </header>
 
   <section class="section">
     <h2>Características</h2>
-
-    <div class="features">
+    <div class="features-grid">
 
       <div class="card">
         <h3>Perfiles locales</h3>
-        <p>
-          Crea múltiples perfiles y administra catálogos separados.
-        </p>
+        <p>Crea múltiples perfiles y administra catálogos separados.</p>
       </div>
 
       <div class="card">
         <h3>Completamente offline</h3>
-        <p>
-          Feed95 funciona localmente usando SQLite.
-        </p>
+        <p>Feed95 funciona localmente usando SQLite.</p>
       </div>
 
       <div class="card">
         <h3>Gestión de juegos</h3>
-        <p>
-          Agrega, edita y organiza tus videojuegos fácilmente.
-        </p>
+        <p>Agrega, edita y organiza tus videojuegos fácilmente.</p>
       </div>
 
       <div class="card">
         <h3>Windows y Android</h3>
-        <p>
-          Disponible para escritorio y dispositivos móviles.
-        </p>
+        <p>Disponible para escritorio y dispositivos móviles.</p>
       </div>
 
     </div>
   </section>
 
   <section class="section">
-    <h2>Capturas</h2>
+    <h2>Capturas de la interfaz</h2>
+    <div class="screenshots-container">
 
-    <div class="screenshots">
+      <div class="window-mockup">
+        <div class="window-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <div class="window-title">Feed95 - Dashboard</div>
+        </div>
+        <img src="https://placehold.co/800x450/121212/ffffff?text=Captura+Dashboard" alt="Screenshot 1">
+      </div>
 
-      <img src="https://placehold.co/500x280?text=Feed95+1" alt="Screenshot 1">
-      <img src="https://placehold.co/500x280?text=Feed95+2" alt="Screenshot 2">
-      <img src="https://placehold.co/500x280?text=Feed95+3" alt="Screenshot 3">
+      <div class="window-mockup">
+        <div class="window-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <div class="window-title">Feed95 - Mi Catálogo</div>
+        </div>
+        <img src="https://placehold.co/800x450/121212/ffffff?text=Captura+Catalogo" alt="Screenshot 2">
+      </div>
 
     </div>
   </section>
 
   <section class="section">
-    <h2>Roadmap</h2>
-
-    <ul class="roadmap">
-      <li>✔ Sistema de perfiles</li>
-      <li>✔ Gestión de catálogo</li>
-      <li>⏳ Tema oscuro</li>
-      <li>⏳ Sistema de filtros</li>
-      <li>⏳ Lanzamiento de juegos</li>
-      <li>⏳ Sincronización en la nube</li>
-      <li>⏳ Estadísticas y métricas</li>
-      <li>⏳ Sistema de favoritos</li>
+    <h2>Roadmap del Proyecto</h2>
+    <ul class="roadmap-list">
+      <li class="done"> Sistema y modificación de perfiles</li>
+      <li class="done"> Gestión de catálogo</li>
+      <li class="done"> Sistema de respaldos</li>
+      <li class="done"> Sistema de busqueda y filtros</li>
+      <li class="done"> Estadísticas y métricas</li>
+      <li class="done"> Lanzamiento directo de juegos</li>
+      <li class="pending"> Compatibilidad con otros idiomas</li>
+      <li class="pending"> Sincronización local / la nube</li>
     </ul>
   </section>
 
