@@ -3,108 +3,177 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Feed95 - Descarga</title>
+  <title>Feed95 — Catálogo personal de videojuegos</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- HERO -->
   <header class="hero">
     <div class="hero-content">
+      <span class="hero-eyebrow">Catálogo personal de videojuegos</span>
       <h1>Feed95</h1>
-
-      <p>
-        Catálogo personal de videojuegos para Windows y Android.
-        Organiza tu colección completamente offline.
-      </p>
-
+      <p>Sin cuentas. Sin servidores. Sin internet.<br>Solo tus juegos, en tu dispositivo.</p>
       <div class="buttons">
-        <a href="https://github.com/SrFaper/feed95/releases/download/beta-android/feed95.apk" target="_blank" class="btn primary" id="btn-apk">
-          <span>Descargar APK</span>
+        <a href="https://github.com/SrFaper/feed95/releases/tag/beta"
+           target="_blank" class="btn primary" id="btn-apk">
+          <span class="btn-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            Android
+          </span>
           <small class="version-tag">Cargando...</small>
         </a>
-
-        <a href="https://github.com/SrFaper/feed95/releases/download/beta-windows/feed95.zip" target="_blank" class="btn secondary" id="btn-windows">
-          <span>Descargar Windows</span>
+        <a href="https://github.com/SrFaper/feed95/releases/tag/beta-windows"
+           target="_blank" class="btn secondary" id="btn-windows">
+          <span class="btn-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5L10.5 4.5V11.5H3V5.5ZM11.5 4.35L21 3V11.5H11.5V4.35ZM3 12.5H10.5V19.5L3 18.5V12.5ZM11.5 12.5H21V21L11.5 19.65V12.5Z"/></svg>
+            Windows
+          </span>
           <small class="version-tag">Cargando...</small>
         </a>
-
-        <a href="https://github.com/SrFaper/feed95" target="_blank" class="btn github">
-          Ver GitHub
+        <a href="https://github.com/SrFaper/feed95" target="_blank" class="btn ghost">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          GitHub
         </a>
       </div>
     </div>
   </header>
 
-  <section class="section">
-    <h2>Características</h2>
+  <!-- CARACTERÍSTICAS -->
+  <section class="section" id="features">
+    <h2>Qué puede hacer</h2>
     <div class="features-grid">
-
       <div class="card">
-        <h3>Perfiles locales</h3>
-        <p>Crea múltiples perfiles y administra catálogos separados.</p>
+        <div class="card-icon"></div>
+        <h3>Múltiples perfiles</h3>
+        <p>Cada perfil tiene su propia contraseña, color de acento e imagen. Comparte el dispositivo sin mezclar catálogos.</p>
       </div>
-
       <div class="card">
-        <h3>Completamente offline</h3>
-        <p>Feed95 funciona localmente usando SQLite.</p>
+        <div class="card-icon"></div>
+        <h3>100% offline</h3>
+        <p>Todo se guarda en SQLite local. Sin cuentas, sin nube, sin conexión. Tus datos no salen de tu dispositivo.</p>
       </div>
-
       <div class="card">
-        <h3>Gestión de juegos</h3>
-        <p>Agrega, edita y organiza tus videojuegos fácilmente.</p>
+        <div class="card-icon"></div>
+        <h3>Importación desde Steam, Epic e IGDB</h3>
+        <p>Busca cualquier juego e importa portada, descripción, géneros y capturas en un clic.</p>
       </div>
-
       <div class="card">
-        <h3>Windows y Android</h3>
-        <p>Disponible para escritorio y dispositivos móviles.</p>
+        <div class="card-icon"></div>
+        <h3>Categorías y filtros</h3>
+        <p>Organiza tu catálogo con categorías personalizadas. Filtra por estado, categoría o búsqueda de texto.</p>
       </div>
-
+      <div class="card">
+        <div class="card-icon"></div>
+        <h3>Lanzador integrado</h3>
+        <p>Vincula el ejecutable de cada juego y árrancalo directo desde la app. Solo en Windows.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"></div>
+        <h3>Backup y restauración</h3>
+        <p>Exporta toda tu colección a un archivo JSON e impórtala en cualquier dispositivo cuando quieras.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"></div>
+        <h3>Estados y calificaciones</h3>
+        <p>Pendiente, Jugando, Completado, Abandonado. Califica del 1 al 10. Reordena tu catálogo a mano.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"></div>
+        <h3>Tema y acento personalizables</h3>
+        <p>Modo claro u oscuro con color de acento por perfil. La interfaz se adapta al color que elijas.</p>
+      </div>
     </div>
   </section>
 
-  <section class="section">
-    <h2>Capturas de la interfaz</h2>
-    <div class="screenshots-container">
-
-      <div class="window-mockup">
-        <div class="window-header">
-          <span class="dot red"></span>
-          <span class="dot yellow"></span>
-          <span class="dot green"></span>
-          <div class="window-title">Feed95 - Dashboard</div>
-        </div>
-        <img src="https://placehold.co/800x450/121212/ffffff?text=Captura+Dashboard" alt="Screenshot 1">
+  <!-- FUENTES DE DATOS -->
+  <section class="section section-alt" id="sources">
+    <h2>Fuentes de metadatos</h2>
+    <p class="section-subtitle">Feed95 puede importar datos de tres fuentes. Los servicios externos no están afiliados al proyecto.</p>
+    <div class="sources-grid">
+      <div class="source-card">
+        <h3>Steam</h3>
+        <p>Búsqueda sin configuración previa. Importa portada, descripción, géneros y capturas desde los endpoints públicos de la tienda de Steam.</p>
+        <span class="source-badge">Sin configuración</span>
       </div>
-
-      <div class="window-mockup">
-        <div class="window-header">
-          <span class="dot red"></span>
-          <span class="dot yellow"></span>
-          <span class="dot green"></span>
-          <div class="window-title">Feed95 - Mi Catálogo</div>
-        </div>
-        <img src="https://placehold.co/800x450/121212/ffffff?text=Captura+Catalogo" alt="Screenshot 2">
+      <div class="source-card">
+        <h3>Epic Games Store</h3>
+        <p>Búsqueda sin configuración previa usando el endpoint GraphQL público de Epic. No requiere cuenta ni clave.</p>
+        <span class="source-badge">Sin configuración</span>
       </div>
-
+      <div class="source-card">
+        <h3>IGDB</h3>
+        <p>Base de datos de videojuegos de Twitch. Requiere credenciales gratuitas de Twitch Developer. Cubre prácticamente cualquier plataforma y época.</p>
+        <span class="source-badge source-badge--config">Requiere configuración</span>
+      </div>
     </div>
+    <p class="sources-note">
+      Los datos de IGDB son provistos por <a href="https://www.igdb.com" target="_blank">IGDB.com</a>.
+    </p>
   </section>
 
-  <section class="section">
-    <h2>Roadmap del Proyecto</h2>
+  <!-- ROADMAP -->
+  <section class="section" id="roadmap">
+    <h2>Estado del proyecto</h2>
     <ul class="roadmap-list">
-      <li class="done"> Sistema y modificación de perfiles</li>
-      <li class="done"> Gestión de catálogo</li>
-      <li class="done"> Sistema de respaldos</li>
-      <li class="done"> Sistema de busqueda y filtros</li>
-      <li class="done"> Estadísticas y métricas</li>
-      <li class="done"> Lanzamiento directo de juegos</li>
-      <li class="pending"> Compatibilidad con otros idiomas</li>
-      <li class="pending"> Sincronización local / la nube</li>
+      <li class="done"><span class="roadmap-check">✓</span> Perfiles locales con contraseña, color e imagen</li>
+      <li class="done"><span class="roadmap-check">✓</span> Gestión completa del catálogo (agregar, editar, eliminar)</li>
+      <li class="done"><span class="roadmap-check">✓</span> Importación desde Steam, Epic Games e IGDB</li>
+      <li class="done"><span class="roadmap-check">✓</span> Categorías personalizadas y panel de filtros</li>
+      <li class="done"><span class="roadmap-check">✓</span> Reordenamiento manual del catálogo</li>
+      <li class="done"><span class="roadmap-check">✓</span> Lanzador de juegos desde la app (Windows)</li>
+      <li class="done"><span class="roadmap-check">✓</span> Exportación e importación de backups</li>
+      <li class="done"><span class="roadmap-check">✓</span> Catálogo secundario opcional</li>
+      <li class="done"><span class="roadmap-check">✓</span> Tema claro / oscuro con acento por perfil</li>
+      <li class="pending"><span class="roadmap-check">◷</span> Soporte para más idiomas</li>
+      <li class="pending"><span class="roadmap-check">◷</span> Estadísticas y métricas del catálogo</li>
+      <li class="pending"><span class="roadmap-check">◷</span> Sincronización entre dispositivos</li>
     </ul>
   </section>
 
+  <!-- DESCARGA -->
+  <section class="section section-alt" id="download">
+    <h2>Descargar Feed95</h2>
+    <div class="download-grid">
+      <div class="download-card">
+        <div class="platform-icon">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h3>Android</h3>
+        <p>Descarga el <code>.apk</code>, ábrelo e instálalo. Puede que tengas que permitir instalación desde fuentes desconocidas.</p>
+        <a href="https://github.com/SrFaper/feed95/releases/tag/beta" class="btn primary" id="btn-apk-2">
+          <span>Descargar APK</span>
+          <small class="version-tag">beta</small>
+        </a>
+      </div>
+      <div class="download-card">
+        <div class="platform-icon">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5L10.5 4.5V11.5H3V5.5ZM11.5 4.35L21 3V11.5H11.5V4.35ZM3 12.5H10.5V19.5L3 18.5V12.5ZM11.5 12.5H21V21L11.5 19.65V12.5Z"/></svg>
+        </div>
+        <h3>Windows</h3>
+        <p>Descarga el <code>.zip</code>, extrae el contenido en una carpeta y ejecuta <code>feed95.exe</code>. No requiere instalación.</p>
+        <a href="https://github.com/SrFaper/feed95/releases/tag/beta-windows" class="btn secondary" id="btn-windows-2">
+          <span>Descargar .zip</span>
+          <small class="version-tag">beta-windows</small>
+        </a>
+      </div>
+    </div>
+    <p class="download-note">
+      Versiones anteriores y código fuente en
+      <a href="https://github.com/SrFaper/feed95/releases" target="_blank">GitHub Releases</a>.
+    </p>
+  </section>
+
   <footer>
-    <p>Feed95 © 2026</p>
+    <p>
+      Feed95 &copy; 2026 &mdash; Licencia GNU GPL v3 &mdash;
+      <a href="https://github.com/SrFaper/feed95" target="_blank">GitHub</a>
+    </p>
+    <p class="footer-notice">
+      Steam es marca registrada de Valve Corporation. Epic Games Store es marca de Epic Games, Inc.
+      Los datos de IGDB son provistos por <a href="https://www.igdb.com" target="_blank">IGDB.com</a>.
+      Feed95 no está afiliado ni es respaldado por ninguno de estos servicios.
+    </p>
   </footer>
 
   <script src="script.js"></script>

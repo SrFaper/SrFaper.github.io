@@ -1,47 +1,31 @@
-/* Lógica de consulta automatizada de la API de GitHub */
+/* Carga dinámica de versiones desde GitHub Releases */
 window.addEventListener("DOMContentLoaded", () => {
-  
-  /* Configuracion del repositorio objetivo */
-  const cuentaGitHub = "SrFaper";
-  const repoGitHub = "feed95";
-  const urlApi = `https://api.github.com/repos/${cuentaGitHub}/${repoGitHub}/releases`;
+  const OWNER = "SrFaper";
+  const REPO  = "feed95";
 
-  /* Peticion asincrona a los Releases de GitHub */
-  fetch(urlApi)
-    .then(respuesta => {
-      if (!respuesta.ok) throw new Error("Error de red");
-      return respuesta.json();
+  fetch(`https://api.github.com/repos/${OWNER}/${REPO}/releases`)
+    .then(res => {
+      if (!res.ok) throw new Error("GitHub API error");
+      return res.json();
     })
-    .then(datosReleases => {
-      if (datosReleases && datosReleases.length > 0) {
-        
-        /* 1. Buscar de forma independiente cada lanzamiento por su tag_name o target_commitish */
-        const releaseAndroid = datosReleases.find(rel => rel.tag_name.includes('android') || rel.tag_name === 'beta-android');
-        const releaseWindows = datosReleases.find(rel => rel.tag_name.includes('windows') || rel.tag_name === 'beta-windows');
+    .then(releases => {
+      const android = releases.find(r => r.tag_name === "beta" || r.tag_name.includes("android"));
+      const windows = releases.find(r => r.tag_name === "beta-windows" || r.tag_name.includes("windows"));
 
-        /* 2. Capturar los elementos del DOM */
-        const tagApk = document.querySelector("#btn-apk .version-tag");
-        const tagWindows = document.querySelector("#btn-windows .version-tag");
-
-        /* 3. Asignar a cada uno su versión real si se encuentra en GitHub */
-        if (tagApk) {
-          tagApk.textContent = releaseAndroid ? releaseAndroid.tag_name : "beta-android";
-        }
-        
-        if (tagWindows) {
-          tagWindows.textContent = releaseWindows ? releaseWindows.tag_name : "beta-windows";
-        }
-      }
+      setVersionTag("#btn-apk",      android?.tag_name ?? "beta");
+      setVersionTag("#btn-apk-2",    android?.tag_name ?? "beta");
+      setVersionTag("#btn-windows",  windows?.tag_name ?? "beta-windows");
+      setVersionTag("#btn-windows-2",windows?.tag_name ?? "beta-windows");
     })
-    .catch(error => {
-      /* Control alternativo si falla la API o no encuentra datos */
-      console.log("No se pudieron cargar dinámicamente los tags de versión:", error);
-      
-      // Como respaldo, asignamos nombres genéricos coherentes a cada uno
-      const tagApk = document.querySelector("#btn-apk .version-tag");
-      const tagWindows = document.querySelector("#btn-windows .version-tag");
-      
-      if (tagApk) tagApk.textContent = "beta-android";
-      if (tagWindows) tagWindows.textContent = "beta-windows";
+    .catch(() => {
+      setVersionTag("#btn-apk",       "beta");
+      setVersionTag("#btn-apk-2",     "beta");
+      setVersionTag("#btn-windows",   "beta-windows");
+      setVersionTag("#btn-windows-2", "beta-windows");
     });
+
+  function setVersionTag(selector, text) {
+    const el = document.querySelector(`${selector} .version-tag`);
+    if (el) el.textContent = text;
+  }
 });
