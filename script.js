@@ -14,24 +14,34 @@ window.addEventListener("DOMContentLoaded", () => {
     })
     .then(datosReleases => {
       if (datosReleases && datosReleases.length > 0) {
-        /* Lectura del lanzamiento mas reciente */
-        const ultimoRelease = datosReleases[0];
-        const nombreVersion = ultimoRelease.tag_name; // Ejemplo: 'v1.0.0-beta'
+        
+        /* 1. Buscar de forma independiente cada lanzamiento por su tag_name o target_commitish */
+        const releaseAndroid = datosReleases.find(rel => rel.tag_name.includes('android') || rel.tag_name === 'beta-android');
+        const releaseWindows = datosReleases.find(rel => rel.tag_name.includes('windows') || rel.tag_name === 'beta-windows');
 
-        /* Actualizacion de texto en los botones HTML correspondientes */
+        /* 2. Capturar los elementos del DOM */
         const tagApk = document.querySelector("#btn-apk .version-tag");
         const tagWindows = document.querySelector("#btn-windows .version-tag");
 
-        if (tagApk) tagApk.textContent = nombreVersion;
-        if (tagWindows) tagWindows.textContent = nombreVersion;
+        /* 3. Asignar a cada uno su versión real si se encuentra en GitHub */
+        if (tagApk) {
+          tagApk.textContent = releaseAndroid ? releaseAndroid.tag_name : "beta-android";
+        }
+        
+        if (tagWindows) {
+          tagWindows.textContent = releaseWindows ? releaseWindows.tag_name : "beta-windows";
+        }
       }
     })
     .catch(error => {
       /* Control alternativo si falla la API o no encuentra datos */
       console.log("No se pudieron cargar dinámicamente los tags de versión:", error);
-      const etiquetasModificables = document.querySelectorAll(".version-tag");
-      etiquetasModificables.forEach(etiqueta => {
-        etiqueta.textContent = "Última versión";
-      });
+      
+      // Como respaldo, asignamos nombres genéricos coherentes a cada uno
+      const tagApk = document.querySelector("#btn-apk .version-tag");
+      const tagWindows = document.querySelector("#btn-windows .version-tag");
+      
+      if (tagApk) tagApk.textContent = "beta-android";
+      if (tagWindows) tagWindows.textContent = "beta-windows";
     });
 });
